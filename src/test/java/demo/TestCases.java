@@ -27,56 +27,57 @@ import java.util.logging.Level;
         * TODO: Write your tests here with testng @Test annotation. 
         * Follow `testCase01` `testCase02`... format or what is provided in instructions
         */
-@Test
-public void testCase01() throws InterruptedException{
-driver.get("https://forms.gle/wjPkzeSEk1CM7KgGA");
-Thread.sleep(3000);
-WebElement nameInputBox = driver.findElement(By.xpath("(//input[@class='whsOnd zHQkBf'])[1]"));
-// WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-// wait.until(ExpectedConditions.visibilityOf(nameInputBox));
-System.out.println("wait 1");
-Wrappers.enterText(nameInputBox, "Crio Learner");
-WebElement practisingAutomationTextArea = driver.findElement(By.xpath("//textarea[contains(@class,'tL9Q4c')]"));
-String practisingAutomationText = "I want to be the best QA Engineer!";
-String epochTimeString = Wrappers.getEpochTimeAsString();
-Thread.sleep(3000);
-System.out.println("wait 2");
-Wrappers.enterText(practisingAutomationTextArea, practisingAutomationText+" "+epochTimeString);
-Thread.sleep(3000);
-System.out.println("wait 3");
-Wrappers.radioButton(driver, "0 - 2");
-Thread.sleep(3000);
-System.out.println("wait 4");
-Wrappers.checkbox(driver, "Java");
-Wrappers.checkbox(driver, "Selenium");
-Wrappers.checkbox(driver, "TestNG");
-WebElement dropDoWebElement = driver.findElement(By.xpath("//div[contains(@class,'DEh1R')]"));
-Thread.sleep(3000);
-System.out.println("wait 5");
-Wrappers.clickOnElement(driver, dropDoWebElement);
-Thread.sleep(3000);
-Wrappers.dropDownClick(driver, "Mr");
-WebElement dateInputBox = driver.findElement(By.xpath("//input[@type='date']"));
-String sevenDaysAgoDate = Wrappers.getdateSevenDaysAgo();
-Thread.sleep(3000);
-System.out.println("wait 6");
-Wrappers.enterText(dateInputBox, sevenDaysAgoDate);
-
-WebElement hourElement = driver.findElement(By.xpath("//input[@aria-label='Hour']"));
-WebElement miElement = driver.findElement(By.xpath("//input[@aria-label='Minute']"));
-WebElement submitBtn = driver.findElement(By.xpath("//div[@class='lRwqcd']/div"));
-
-Wrappers.enterText(hourElement, "07");
-Wrappers.enterText(miElement, "30");
-Wrappers.clickOnElement(driver, submitBtn);
-
-Thread.sleep(3000);
-System.out.println("wait 7");
-WebElement successMsgElement = driver.findElement(By.xpath("//div[@class='vHW8K']"));
-String expectedSuccessMsg = "Thanks for your response, Automation Wizard!";
-Assert.assertEquals(successMsgElement.getText(), expectedSuccessMsg);
-
-}
+        @Test
+        public void testCase01() throws InterruptedException{
+        driver.get("https://forms.gle/wjPkzeSEk1CM7KgGA");
+        Thread.sleep(3000);
+        WebElement nameInputBox = driver.findElement(By.xpath("(//input[@class='whsOnd zHQkBf'])[1]"));
+         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+         wait.until(ExpectedConditions.visibilityOf(nameInputBox));
+        System.out.println("wait 1");
+        Wrappers.enterText(nameInputBox, "Crio Learner");
+        WebElement practisingAutomationTextArea = driver.findElement(By.xpath("//textarea[contains(@class,'tL9Q4c')]"));
+        String practisingAutomationText = "I want to be the best QA Engineer!";
+        String epochTimeString = Wrappers.getEpochTimeAsString();
+        Thread.sleep(3000);
+        System.out.println("wait 2");
+        Wrappers.enterText(practisingAutomationTextArea, practisingAutomationText+" "+epochTimeString);
+        Thread.sleep(3000);
+        System.out.println("wait 3");
+        Wrappers.radioButton(driver, "0 - 2");
+        Thread.sleep(3000);
+        System.out.println("wait 4");
+        Wrappers.checkbox(driver, "Java");
+        Wrappers.checkbox(driver, "Selenium");
+        Wrappers.checkbox(driver, "TestNG");
+        WebElement dropDoWebElement = driver.findElement(By.xpath("//div[contains(@class,'DEh1R')]"));
+        Thread.sleep(3000);
+        System.out.println("wait 5");
+        Wrappers.clickOnElement(driver, dropDoWebElement);
+        Thread.sleep(3000);
+        Wrappers.dropDownClick(driver, "Mr");
+        WebElement dateInputBox = driver.findElement(By.xpath("//input[@type='date']"));
+        String sevenDaysAgoDate = Wrappers.getdateSevenDaysAgo();
+        Thread.sleep(3000);
+        System.out.println("wait 6");
+        Wrappers.enterText(dateInputBox, sevenDaysAgoDate);
+        
+        WebElement hourElement = driver.findElement(By.xpath("//input[@aria-label='Hour']"));
+        WebElement miElement = driver.findElement(By.xpath("//input[@aria-label='Minute']"));
+        WebElement submitBtn = driver.findElement(By.xpath("//div[@class='lRwqcd']/div"));
+        
+        Wrappers.enterText(hourElement, "07");
+        Wrappers.enterText(miElement, "30");
+        Wrappers.clickOnElement(driver, submitBtn);
+        
+        Thread.sleep(3000);
+        System.out.println("wait 7");
+        WebElement successMsgElement = driver.findElement(By.xpath("//div[@class='vHW8K']"));
+        String expectedSuccessMsg = "Thanks for your response, Automation Wizard!";
+        Assert.assertEquals(successMsgElement.getText(), expectedSuccessMsg);
+        
+        }
+        
 
 
         
